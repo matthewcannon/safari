@@ -9,7 +9,7 @@ describe("Landing", function() {
         it("Title should be correct", function(done) {
             (async () => Query.PageTitle())()
                 .then(pageTitle => {
-                    pageTitle.should.equal("MVP");
+                    pageTitle.should.equal("Safari");
                     done();
                 })
                 .catch(err => {
