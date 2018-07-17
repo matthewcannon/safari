@@ -1,0 +1,52 @@
+{
+    "name": "Safari",
+    "version": "0.0.1",
+    "description": "A legacy code refactoring exercise.",
+    "license": "UNLICENSED",
+    "private": false,
+    "author": "mcannon",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/matthewcannon/safari.git"
+    },
+    "homepage": "https://github.com/matthewcannon/safari.git#readme",
+    "dependencies": {
+        "prop-types": "^15.6.1",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2",
+        "react-redux": "^5.0.7",
+        "redux": "^4.0.0"
+    },
+    "devDependencies": {
+        "prettier": "^1.13.7",
+        "babel-core": "^6.26.3",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "babelify": "^8.0.0",
+        "browserify": "^16.2.2",
+        "chai": "^4.1.2",
+        "eslint": "^4.19.1",
+        "eslint-plugin-async": "^0.1.1",
+        "eslint-plugin-react": "^7.8.2",
+        "gulp": "^4.0.0",
+        "gulp-cssmin": "^0.2.0",
+        "gulp-rename": "^1.2.3",
+        "gulp-sass": "^4.0.1",
+        "gulp-sourcemaps": "^2.6.4",
+        "live-server": "^1.2.0",
+        "mocha": "^4.1.0",
+        "puppeteer": "^1.4.0",
+        "sinon": "^4.1.5",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0",
+        "watchify": "^3.11.0"
+    },
+    "scripts": {
+        "build": "rm -rf ./dist && gulp build",
+        "build-watch": "gulp build-watch",
+        "serve": "live-server ./dist",
+        "test": "mocha --compilers js:babel-core/register",
+        "tdd": "mocha --compilers js:babel-core/register --watch"
+    }
+}
