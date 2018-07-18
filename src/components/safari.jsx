@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as Simulation from "../core/simulation";
+import * as Command from "../commands/safari";
 
 class Safari extends React.Component {
     componentDidMount() {
@@ -31,8 +31,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        start: () => Simulation.Start(dispatch),
-        regenerate: () => Simulation.Regenerate(dispatch),
+        start: () => Command.Start(dispatch),
+        regenerate: () => Command.Regenerate(dispatch),
     };
 };
 

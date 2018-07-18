@@ -4,8 +4,8 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Safari from "./components/safari";
 
-import Simulation from "./reducers/simulation";
-let store = createStore(Simulation);
+import Store from "./read-models/store";
+let store = createStore(Store);
 
 ReactDOM.render(
     <Provider store={store}>

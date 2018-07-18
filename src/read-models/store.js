@@ -1,17 +1,17 @@
-import * as Actions from "../actions/safari";
+import * as Event from "../events/safari";
 import InitialState from "./initialState";
 
-function Simulation(state = InitialState, action) {
+function Store(state = InitialState, event) {
     let nextState;
 
-    switch (action.type) {
-        case Actions.GENERATE:
+    switch (event.type) {
+        case Event.GENERATE:
             nextState = Object.assign({}, state, {
                 generation: state.generation + 1,
             });
             break;
 
-        case Actions.START:
+        case Event.START:
             nextState = Object.assign({}, state, {
                 generation: 0,
             });
@@ -24,4 +24,4 @@ function Simulation(state = InitialState, action) {
     return Object.freeze(nextState);
 }
 
-export default Simulation;
+export default Store;
