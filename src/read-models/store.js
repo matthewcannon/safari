@@ -2,7 +2,7 @@ import * as Event from "../events/safari";
 import InitialState from "./initialState";
 import deepFreeze from "deep-freeze";
 
-function Store(state = InitialState, event) {
+export default function Store(state = InitialState, event) {
     let nextState;
 
     switch (event.type) {
@@ -24,5 +24,3 @@ function Store(state = InitialState, event) {
 
     return deepFreeze(nextState);
 }
-
-export default Store;
