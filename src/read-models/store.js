@@ -17,9 +17,6 @@ export default function Store(state = InitialState, event) {
                 generation: 0,
             });
             break;
-
-        default:
-            nextState = state;
     }
 
     return deepFreeze(nextState);
