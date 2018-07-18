@@ -19,7 +19,7 @@ function Store(state = InitialState, event) {
             break;
 
         default:
-            nextState = Object.assign({}, state);
+            nextState = state;
     }
 
     return deepFreeze(nextState);
