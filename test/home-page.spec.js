@@ -6,9 +6,28 @@ import * as HomePage from "./lib/home-page.js";
 Chai.should();
 
 describe("Home page", () => {
+    let page;
+
+    beforeEach(done => {
+        (async () => {
+            page = await Page.Open(HomePage);
+            done();
+        })().catch(err => {
+            done(err);
+        });
+    });
+
+    afterEach(done => {
+        (async () => {
+            await page.close();
+            done();
+        })().catch(err => {
+            done(err);
+        });
+    });
+
     it("Should be present", done => {
         (async () => {
-            const page = await Page.Open(HomePage);
             const pageIsHomePage = await HomePage.Is(page);
             pageIsHomePage.should.be.true;
             done();
@@ -20,7 +39,6 @@ describe("Home page", () => {
     describe("Content", () => {
         it("Should be present", done => {
             (async () => {
-                const page = await Page.Open(HomePage);
                 const pageHasContent = await HomePage.HasContent(page);
                 pageHasContent.should.be.true;
                 done();
