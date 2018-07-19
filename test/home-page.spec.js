@@ -26,7 +26,7 @@ describe("Home page", () => {
         });
     });
 
-    it("Should be present", done => {
+    it("Should be available", done => {
         (async () => {
             const pageIsHomePage = await HomePage.Is(page);
             pageIsHomePage.should.be.true;
@@ -45,12 +45,6 @@ describe("Home page", () => {
             })().catch(err => {
                 done(err);
             });
-        });
-    });
-
-    describe("Options", () => {
-        xit("Should be present", done => {
-            done();
         });
     });
 });
