@@ -1,5 +1,6 @@
 export const Url = "/";
 export const Title = "Safari";
+export const Container = "div[id=home]";
 
 export const Is = async page => {
     const pageTitle = await page.title();
@@ -7,7 +8,8 @@ export const Is = async page => {
 };
 
 export const HasContent = async page => {
-    return await false;
+    const containerElement = await page.$(Container);
+    return containerElement !== null;
 };
 
 export const HasOptions = async page => {

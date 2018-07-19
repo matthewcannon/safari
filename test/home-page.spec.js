@@ -18,8 +18,15 @@ describe("Home page", () => {
     });
 
     describe("Content", () => {
-        xit("Should be present", done => {
-            done();
+        it("Should be present", done => {
+            (async () => {
+                const page = await Page.Open(HomePage);
+                const pageHasContent = await HomePage.HasContent(page);
+                pageHasContent.should.be.true;
+                done();
+            })().catch(err => {
+                done(err);
+            });
         });
     });
 
