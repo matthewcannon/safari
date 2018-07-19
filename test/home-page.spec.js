@@ -8,8 +8,8 @@ Chai.should();
 describe("Home page", () => {
     it("Should be present", done => {
         (async () => {
-            let page = await Page.Open(HomePage);
-            let pageIsHomePage = await HomePage.Is(page);
+            const page = await Page.Open(HomePage);
+            const pageIsHomePage = await HomePage.Is(page);
             pageIsHomePage.should.be.true;
             done();
         })().catch(err => {
