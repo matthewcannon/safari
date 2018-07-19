@@ -7,15 +7,14 @@ Chai.should();
 
 describe("Home page", () => {
     it("Should be present", done => {
-        (async () => Page.Open(HomePage))()
-            .then(page => HomePage.Is(page))
-            .then(match => {
-                match.should.be.true;
-                done();
-            })
-            .catch(err => {
-                done(err);
-            });
+        (async () => {
+            let page = await Page.Open(HomePage);
+            let pageIsHomePage = await HomePage.Is(page);
+            pageIsHomePage.should.be.true;
+            done();
+        })().catch(err => {
+            done(err);
+        });
     });
 
     describe("Content", () => {
