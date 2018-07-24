@@ -13,13 +13,13 @@ export default function Store(state = InitialState, event) {
         // commands being handled elsewhere), with the new state representing the eventually consistent model that is to
         // be applied here to the read model.
         //
-        case Event.GENERATE:
+        case Event.REGENERATED:
             nextState = Object.assign({}, state, {
                 generation: state.generation + 1,
             });
             break;
 
-        case Event.START:
+        case Event.STARTED:
             nextState = Object.assign({}, state, {
                 generation: 0,
             });

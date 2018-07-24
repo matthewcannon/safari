@@ -1,9 +1,9 @@
 import * as Event from "../events/safari";
 
 export function Regenerate(dispatch) {
-    dispatch(Event.generate());
+    dispatch(Event.Regenerated());
 }
 
 export function Start(dispatch) {
-    dispatch(Event.start());
+    dispatch(Event.Started());
 }

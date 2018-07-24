@@ -1,14 +1,14 @@
-export const GENERATE = "GENERATE";
-export const START = "START";
+export const REGENERATED = "REGENERATED";
+export const STARTED = "STARTED";
 
-export function generate() {
+export function Regenerated() {
     return {
-        type: GENERATE,
+        type: REGENERATED,
     };
 }
 
-export function start() {
+export function Started() {
     return {
-        type: START,
+        type: STARTED,
     };
 }
