@@ -1,6 +1,6 @@
 # Safari
 
-A Legacy code refactoring exercise.
+A game for Software Developers.
 
 ## Getting started
 
