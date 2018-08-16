@@ -79,6 +79,10 @@ gulp.task("build-sounds", function() {
     return gulp.src("./src/sounds/**").pipe(gulp.dest("./dist/snd"));
 });
 
+gulp.task("build-libs", function() {
+    return gulp.src("./lib/require.js").pipe(gulp.dest("./dist"));
+});
+
 gulp.task("build-scripts", function() {
     return compile(false);
 });
@@ -93,5 +97,13 @@ gulp.task("build-watch", function() {
 
 gulp.task(
     "build",
-    gulp.parallel("build-styles", "build-images", "build-fonts", "build-sounds", "build-html", "build-scripts"),
+    gulp.parallel(
+        "build-styles",
+        "build-images",
+        "build-fonts",
+        "build-sounds",
+        "build-html",
+        "build-libs",
+        "build-scripts",
+    ),
 );

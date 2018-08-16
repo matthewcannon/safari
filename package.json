@@ -16,7 +16,8 @@
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
         "react-redux": "^5.0.7",
-        "redux": "^4.0.0"
+        "redux": "^4.0.0",
+        "requirejs": "^2.3.3"
     },
     "devDependencies": {
         "prettier": "^1.13.7",
