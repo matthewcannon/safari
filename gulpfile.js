@@ -1,57 +1,40 @@
-var gulp = require("gulp");
-var sourcemaps = require("gulp-sourcemaps");
-var source = require("vinyl-source-stream");
-var buffer = require("vinyl-buffer");
-var browserify = require("browserify");
-var watchify = require("watchify");
-var babel = require("babelify");
+const gulp = require("gulp");
+const sourcemaps = require("gulp-sourcemaps");
+const source = require("vinyl-source-stream");
+const buffer = require("vinyl-buffer");
+const watchify = require("watchify");
+const browserify = require("browserify");
 
-function compile(watch) {
-    var bundler = watchify(
-        browserify({
-            entries: ["./src/main.jsx"],
-            extensions: [".jsx", ".js"],
-            debug: true,
-        }).transform("babelify", {
-            presets: ["babel-preset-env", "babel-preset-react"],
-        }),
-    );
+const bundler = browserify({
+    entries: ["./src/main.jsx"],
+    extensions: [".jsx", ".js"],
+    debug: true,
+}).transform("babelify", {
+    presets: ["babel-preset-env", "babel-preset-react"],
+});
 
-    function rebundle() {
-        return bundler
-            .bundle()
-            .on("error", function(err) {
-                console.error(err);
-                this.emit("end");
-            })
-            .pipe(source("main.js"))
-            .pipe(buffer())
-            .pipe(
-                sourcemaps.init({
-                    loadMaps: true,
-                }),
-            )
-            .pipe(sourcemaps.write("./"))
-            .pipe(gulp.dest("./dist"));
-    }
+const bundle = () => {
+    return bundler
+        .on("error", function(err) {
+            console.error(err);
+            this.emit("end");
+        })
+        .bundle()
+        .pipe(source("main.js"))
+        .pipe(buffer())
+        .pipe(
+            sourcemaps.init({
+                loadMaps: true,
+            }),
+        )
+        .pipe(sourcemaps.write("./"))
+        .pipe(gulp.dest("./dist"));
+};
 
-    if (watch) {
-        bundler
-            .on("update", function() {
-                console.log("-> Bundling ...");
-                return rebundle();
-            })
-            .on("log", function() {
-                console.log("-> Waiting.");
-                return;
-            });
-    }
-
-    return rebundle();
-}
+const bundlefy = watchify(bundler);
 
 gulp.task("build-styles", function() {
-    var sass = require("gulp-sass"),
+    const sass = require("gulp-sass"),
         cssmin = require("gulp-cssmin"),
         rename = require("gulp-rename");
 
@@ -79,12 +62,8 @@ gulp.task("build-sounds", function() {
     return gulp.src("./src/sounds/**").pipe(gulp.dest("./dist/snd"));
 });
 
-gulp.task("build-libs", function() {
-    return gulp.src("./lib/require.js").pipe(gulp.dest("./dist"));
-});
-
 gulp.task("build-scripts", function() {
-    return compile(false);
+    return bundle();
 });
 
 gulp.task("build-html", function() {
@@ -92,18 +71,31 @@ gulp.task("build-html", function() {
 });
 
 gulp.task("build-watch", function() {
-    return compile(true);
+    return bundlefy
+        .on("log", function() {
+            console.log("-> Waiting.");
+        })
+        .on("update", function() {
+            console.log("-> Bundling ...");
+            bundle();
+        })
+        .on("error", function(err) {
+            console.error(err);
+            this.emit("end");
+        })
+        .bundle()
+        .pipe(source("main.js"))
+        .pipe(buffer())
+        .pipe(
+            sourcemaps.init({
+                loadMaps: true,
+            }),
+        )
+        .pipe(sourcemaps.write("./"))
+        .pipe(gulp.dest("./dist"));
 });
 
 gulp.task(
     "build",
-    gulp.parallel(
-        "build-styles",
-        "build-images",
-        "build-fonts",
-        "build-sounds",
-        "build-html",
-        "build-libs",
-        "build-scripts",
-    ),
+    gulp.parallel("build-styles", "build-images", "build-fonts", "build-sounds", "build-html", "build-scripts"),
 );
