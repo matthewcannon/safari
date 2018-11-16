@@ -1,6 +1,6 @@
 # Safari
 
-A game for Software Developers.
+A game for software developers.
 
 ## Getting started
 
