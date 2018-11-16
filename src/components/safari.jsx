@@ -25,12 +25,10 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        start: () => Start(dispatch),
-        regenerate: () => Regenerate(dispatch),
-    };
-};
+const mapDispatchToProps = dispatch => ({
+    start: () => Start(dispatch),
+    regenerate: () => Regenerate(dispatch),
+});
 
 export default connect(
     mapStateToProps,
