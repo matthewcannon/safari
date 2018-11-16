@@ -39,7 +39,7 @@ gulp.task("build-styles", function() {
         rename = require("gulp-rename");
 
     return gulp
-        .src("./src/styles/**/*.scss")
+        .src(["./src/styles/**/*.scss", "./node_modules/normalize.css/normalize.css"])
         .pipe(sass().on("error", sass.logError))
         .pipe(cssmin())
         .pipe(
