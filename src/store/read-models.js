@@ -1,16 +1,16 @@
-import * as Event from "../events/safari";
 import InitialState from "./initialState";
+import * as Action from "../action";
 import deepFreeze from "deep-freeze";
 
-export default function Store(state = InitialState, event) {
+export default function Store(state = InitialState, action) {
     let nextState;
 
-    switch (event.type) {
-        case Event.REGENERATED:
+    switch (action.type) {
+        case Action.REGENERATE:
             nextState = { ...state, generation: state.generation + 1 };
             break;
 
-        case Event.STARTED:
+        case Action.START:
             nextState = { ...state, generation: 0 };
             break;
 

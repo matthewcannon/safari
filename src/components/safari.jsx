@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as Command from "../commands/safari";
+import { Start, Regenerate } from "../command";
 
 class Safari extends React.Component {
     componentDidMount() {
         this.props.start();
         const regenerateInterval = 1000 / 24;
-        this.timer = setInterval(() => this.props.regenerate(), regenerateInterval);
+        this.timer = setInterval(this.props.regenerate, regenerateInterval);
     }
 
     render() {
@@ -27,8 +27,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        start: () => Command.Start(dispatch),
-        regenerate: () => Command.Regenerate(dispatch),
+        start: () => Start(dispatch),
+        regenerate: () => Regenerate(dispatch),
     };
 };
 
