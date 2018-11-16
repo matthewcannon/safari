@@ -11,11 +11,7 @@ class Safari extends React.Component {
     }
 
     render() {
-        return (
-            <div id="home">
-                <span id="generation">{this.props.generation}</span>
-            </div>
-        );
+        return <span id="generation">{this.props.generation}</span>;
     }
 }
 
