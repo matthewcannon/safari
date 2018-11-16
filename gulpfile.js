@@ -10,7 +10,7 @@ const bundler = browserify({
     extensions: [".jsx", ".js"],
     debug: true,
 }).transform("babelify", {
-    presets: ["babel-preset-env", "babel-preset-react"],
+    presets: ["@babel/preset-env", "@babel/preset-react"],
 });
 
 const bundle = () => {
