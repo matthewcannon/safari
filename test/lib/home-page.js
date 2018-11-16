@@ -8,8 +8,8 @@ export const Is = async page => {
 };
 
 export const HasContent = async page => {
-    const containerElement = await page.$(Generation);
-    return containerElement !== null;
+    const generationElement = await page.$(Generation);
+    return generationElement !== null;
 };
 
 export const HasOptions = async page => {

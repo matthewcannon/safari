@@ -1,16 +1,16 @@
 import "@babel/polyfill";
 import * as Chai from "chai";
-import * as Page from "./lib/page.js";
-import * as HomePage from "./lib/home-page.js";
+import * as Page from "./lib/page";
+import * as HomePage from "./lib/home-page";
 
 Chai.should();
 
 describe("Home page", () => {
-    let page;
+    let currentPage;
 
     beforeEach(done => {
         (async () => {
-            page = await Page.Open(HomePage);
+            currentPage = await Page.Open(HomePage);
             done();
         })().catch(err => {
             done(err);
@@ -19,7 +19,7 @@ describe("Home page", () => {
 
     afterEach(done => {
         (async () => {
-            await page.close();
+            await currentPage.close();
             done();
         })().catch(err => {
             done(err);
@@ -28,8 +28,8 @@ describe("Home page", () => {
 
     it("Should be available", done => {
         (async () => {
-            const pageIsHomePage = await HomePage.Is(page);
-            pageIsHomePage.should.be.true;
+            const homePageIsCurrentPage = await HomePage.Is(currentPage);
+            homePageIsCurrentPage.should.be.true;
             done();
         })().catch(err => {
             done(err);
@@ -39,7 +39,7 @@ describe("Home page", () => {
     describe("Content", () => {
         it("Should be present", done => {
             (async () => {
-                const pageHasContent = await HomePage.HasContent(page);
+                const pageHasContent = await HomePage.HasContent(currentPage);
                 pageHasContent.should.be.true;
                 done();
             })().catch(err => {

@@ -1,4 +1,4 @@
-import Browser from "./browser.js";
+import Browser from "./browser";
 
 const scheme = "http";
 const host = "localhost";
