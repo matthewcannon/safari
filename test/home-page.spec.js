@@ -1,4 +1,4 @@
-import "babel-polyfill";
+import "@babel/polyfill";
 import * as Chai from "chai";
 import * as Page from "./lib/page.js";
 import * as HomePage from "./lib/home-page.js";
