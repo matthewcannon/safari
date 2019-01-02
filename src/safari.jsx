@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Start, Regenerate } from "../command";
+import { Start, Regenerate } from "./command";
 
 class Safari extends React.Component {
     componentDidMount() {

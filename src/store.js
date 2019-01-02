@@ -1,5 +1,5 @@
 import InitialState from "./initialState";
-import * as Action from "../action";
+import * as Action from "./action";
 import deepFreeze from "deep-freeze";
 
 export default function Store(state = InitialState, action) {
