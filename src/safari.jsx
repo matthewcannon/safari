@@ -16,14 +16,12 @@ class Safari extends React.Component {
 }
 
 Safari.propTypes = {
-    generation: PropTypes.number,
+    generation: PropTypes.number.isRequired,
+    regenerate: PropTypes.func.isRequired,
+    start: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
-    return {
-        generation: state.generation,
-    };
-};
+const mapStateToProps = state => ({ generation: state.generation });
 
 const mapDispatchToProps = dispatch => ({
     start: () => Start(dispatch),
