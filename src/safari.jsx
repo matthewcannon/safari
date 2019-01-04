@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Start, Regenerate } from "./command";
+import { Regenerate } from "./command";
 
 class Safari extends React.Component {
     componentDidMount() {
-        this.props.start();
         const regenerateInterval = 1000 / 24;
-        this.timer = setInterval(this.props.regenerate, regenerateInterval);
+        setInterval(this.props.regenerate, regenerateInterval);
     }
 
     render() {
@@ -18,15 +17,11 @@ class Safari extends React.Component {
 Safari.propTypes = {
     generation: PropTypes.number.isRequired,
     regenerate: PropTypes.func.isRequired,
-    start: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({ generation: state.generation });
 
-const mapDispatchToProps = dispatch => ({
-    start: () => Start(dispatch),
-    regenerate: () => Regenerate(dispatch),
-});
+const mapDispatchToProps = dispatch => ({ regenerate: () => Regenerate(dispatch) });
 
 export default connect(
     mapStateToProps,

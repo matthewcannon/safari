@@ -1,5 +1,5 @@
 const InitialState = {
-    generation: undefined,
+    generation: 0,
 };
 
 export default InitialState;

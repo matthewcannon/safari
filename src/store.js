@@ -10,10 +10,6 @@ export default function Store(state = InitialState, action) {
             nextState = { ...state, generation: state.generation + 1 };
             break;
 
-        case Action.START:
-            nextState = { ...state, generation: 0 };
-            break;
-
         default:
             nextState = state;
             break;
