@@ -6,7 +6,7 @@ describe("Regenerate", () => {
     test("Should increment the generation", () => {
         const store = createStore(reduce);
 
-        const generation = store.getState().generation;
+        const { generation } = store.getState();
 
         regenerate(store.dispatch);
 
