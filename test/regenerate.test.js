@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import reduce from "../lib/reducer";
-import { regenerate } from "../lib/command";
+import reduce from "../src/reducer";
+import { regenerate } from "../src/command";
 
 describe("Regenerate", () => {
     test("Should add 1 to the generation", () => {
