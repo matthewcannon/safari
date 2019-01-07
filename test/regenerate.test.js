@@ -3,7 +3,7 @@ import reduce from "../lib/reducer";
 import { regenerate } from "../lib/command";
 
 describe("Regenerate", () => {
-    test("Should increment the generation", () => {
+    test("Should add 1 to the generation", () => {
         const store = createStore(reduce);
 
         const { generation } = store.getState();
