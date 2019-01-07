@@ -58,7 +58,7 @@
     },
     "scripts": {
         "babel": "babel ./src --out-dir ./lib",
-        "build": "npm run prettier && npm run lint && npm run jest && npm run babel && npm run pack && npm run sass && npm run copy-images && npm run copy-fonts",
+        "build": "npm run prettier && npm run babel && npm run lint && npm run jest && npm run pack && npm run sass && npm run copy-images && npm run copy-fonts",
         "clean": "rm -rf ./lib && rm -rf ./public && rm -rf ./coverage && rm -rf .cache",
         "copy-fonts": "mkdir -p ./public/font/ && cp ./src/font/* ./public/font/",
         "copy-images": "mkdir -p ./public/image/ && cp ./src/image/* ./public/image/",
@@ -69,7 +69,7 @@
         "rebuild": "npm run clean && npm run build",
         "sass": "node-sass ./src/style/ --output-style compressed --output ./public/style/",
         "serve": "live-server ./public",
-        "start": "npm run clean && npm run build && npm run serve",
+        "start": "npm run rebuild && npm run serve",
         "test": "npm run lint && npm run jest",
         "tdd": "onchange -i './test/**/*.js' './src/**/*.js' './src/**/*.jsx' -- npm run build"
     }

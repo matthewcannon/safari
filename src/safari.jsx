@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Regenerate } from "./command";
+import * as Command from "./command";
 
 class Safari extends React.Component {
     componentDidMount() {
@@ -21,7 +21,7 @@ Safari.propTypes = {
 
 const mapStateToProps = state => ({ generation: state.generation });
 
-const mapDispatchToProps = dispatch => ({ regenerate: () => Regenerate(dispatch) });
+const mapDispatchToProps = dispatch => ({ regenerate: () => Command.regenerate(dispatch) });
 
 export default connect(
     mapStateToProps,

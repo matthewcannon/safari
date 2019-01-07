@@ -1,2 +1,2 @@
 export const REGENERATE = "REGENERATE";
-export const Regenerate = () => ({ type: REGENERATE });
+export const regenerate = () => ({ type: REGENERATE });
