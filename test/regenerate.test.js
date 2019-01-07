@@ -6,8 +6,10 @@ describe("Regenerate", () => {
     test("Should increment the generation", () => {
         const store = createStore(reduce);
 
+        const generation = store.getState().generation;
+
         regenerate(store.dispatch);
 
-        expect(store.getState().generation).toEqual(1);
+        expect(store.getState().generation).toEqual(generation + 1);
     });
 });
