@@ -1,8 +1,11 @@
 import deepFreeze from "deep-freeze";
-import InitialState from "./initialState";
 import * as Action from "./action";
 
-export default function reduce(state = InitialState, action) {
+const initialState = {
+    generation: 0,
+};
+
+export default function reduce(state = initialState, action) {
     let nextState;
 
     switch (action.type) {
