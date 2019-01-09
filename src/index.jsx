@@ -1,12 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { render } from "react-dom";
 import { Provider } from "react-redux";
-import reduce from "./reducer";
+import configureStore from "./store";
 import Safari from "./safari";
 
-ReactDOM.render(
-    <Provider store={createStore(reduce)}>
+const store = configureStore();
+
+render(
+    <Provider store={store}>
         <Safari />
     </Provider>,
     document.querySelector("#container"),
