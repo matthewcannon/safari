@@ -2,24 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { regenerate } from "./action";
+import Debugger from "./debugger";
 
-const Safari = ({ generation, regenerate }) => (
+const Safari = ({ regenerate }) => (
     <div>
-        <div>
-            <button type="button" onClick={regenerate}>
-                Regenerate
-            </button>
-        </div>
-        <span id="generation">{generation}</span>
+        <button type="button" onClick={regenerate}>
+            Regenerate
+        </button>
+        <Debugger />
     </div>
 );
 
 Safari.propTypes = {
-    generation: PropTypes.number.isRequired,
     regenerate: PropTypes.func.isRequired,
 };
 
 export default connect(
-    ({ generation }) => ({ generation }),
+    null,
     { regenerate },
 )(Safari);
