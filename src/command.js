@@ -1,5 +1,5 @@
 import * as Action from "./action";
 
-export function regenerate(dispatch) {
-    dispatch(Action.regenerate());
+export function createGame(dispatch) {
+    dispatch(Action.createGame());
 }

@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 import reduce from "../src/reducer";
-import { regenerate } from "../src/command";
+import { regenerate } from "../src/action";
 
 describe("Regenerate", () => {
     test("Should add 1 to the generation", () => {
@@ -8,7 +8,7 @@ describe("Regenerate", () => {
 
         const { generation } = store.getState();
 
-        regenerate(store.dispatch);
+        store.dispatch(regenerate());
 
         expect(store.getState().generation).toEqual(generation + 1);
     });

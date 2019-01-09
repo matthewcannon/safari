@@ -13,6 +13,10 @@ export default function reduce(state = initialState, action) {
             nextState = { ...state, generation: state.generation + 1 };
             break;
 
+        case Action.CREATE_GAME:
+            nextState = { ...state, players: [] };
+            break;
+
         default:
             nextState = state;
             break;

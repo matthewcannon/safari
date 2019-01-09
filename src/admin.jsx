@@ -1,19 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { regenerate } from "./action";
+import { createGame } from "./command";
 
-const Admin = ({ regenerate }) => (
-    <button type="button" onClick={regenerate}>
-        Regenerate
+const Admin = ({ createGame }) => (
+    <button type="button" onClick={createGame}>
+        New game
     </button>
 );
 
 Admin.propTypes = {
-    regenerate: PropTypes.func.isRequired,
+    createGame: PropTypes.func.isRequired,
 };
 
 export default connect(
     null,
-    { regenerate },
+    { createGame },
 )(Admin);
