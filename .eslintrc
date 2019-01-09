@@ -11,7 +11,8 @@
         "react/destructuring-assignment": "off",
         "react/forbid-prop-types": "off",
         "react/no-deprecated": "off",
-        "no-undef": "off"
+        "no-undef": "off",
+        "no-shadow": "off"
     },
     "env": {
         "jest": true

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as Command from "./command";
+import { regenerate } from "./action";
 
 const Safari = ({ generation, regenerate }) => (
     <div>
@@ -21,5 +21,5 @@ Safari.propTypes = {
 
 export default connect(
     ({ generation }) => ({ generation }),
-    dispatch => ({ regenerate: () => Command.regenerate(dispatch) }),
+    { regenerate },
 )(Safari);
