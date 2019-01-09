@@ -1,23 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { regenerate } from "./action";
+import Admin from "./admin";
 import Debugger from "./debugger";
 
-const Safari = ({ regenerate }) => (
+const Safari = () => (
     <div>
-        <button type="button" onClick={regenerate}>
-            Regenerate
-        </button>
+        <Admin />
         <Debugger />
     </div>
 );
 
-Safari.propTypes = {
-    regenerate: PropTypes.func.isRequired,
-};
-
-export default connect(
-    null,
-    { regenerate },
-)(Safari);
+export default Safari;
