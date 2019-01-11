@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Player = ({ name }) => (
-    <div>
+    <div key={name}>
         <span>{name}</span>
     </div>
 );

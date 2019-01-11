@@ -1,22 +1,16 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import List from "./list";
 import Player from "./player";
 
-const Players = ({ items }) => (
-    <div>
-        {items.map(item => (
-            <Player key={item.name} name={item.name} />
-        ))}
-    </div>
-);
+const Players = ({ players }) => List({ iteratee: Player, items: players });
 
 Players.propTypes = {
-    items: PropTypes.array,
+    players: PropTypes.array,
 };
 
 Players.defaultProps = {
-    items: [{ name: "Super Camel" }, { name: "Turbo Alpaca" }, { name: "Awesome Ibex" }],
+    players: [{ name: "Super Camel" }, { name: "Turbo Alpaca" }, { name: "Awesome Ibex" }],
 };
 
-export default connect(({ players }) => ({ items: players }))(Players);
+export default connect(({ players }) => ({ players }))(Players);

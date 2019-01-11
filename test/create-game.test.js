@@ -3,7 +3,7 @@ import reduce from "../src/reducer";
 import { createGame } from "../src/command";
 
 describe("Create game", () => {
-    test("Should create an empty list of players", () => {
+    test("Creates an empty player list", () => {
         const store = createStore(reduce);
 
         createGame(store.dispatch);

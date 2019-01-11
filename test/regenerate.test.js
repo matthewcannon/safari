@@ -3,7 +3,7 @@ import reduce from "../src/reducer";
 import { regenerate } from "../src/action";
 
 describe("Regenerate", () => {
-    test("Should add 1 to the generation", () => {
+    test("Adds 1 to the generation", () => {
         const store = createStore(reduce);
 
         const { generation } = store.getState();
