@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import reduce from "../src/admin/reducer";
+import reduce from "../src/reducer";
 import { createGame } from "../src/admin/command";
 
 describe("Create game", () => {
@@ -8,6 +8,6 @@ describe("Create game", () => {
 
         createGame(store.dispatch);
 
-        expect(store.getState().players).toEqual([]);
+        expect(store.getState().admin.players).toEqual([]);
     });
 });
