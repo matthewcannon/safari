@@ -69,7 +69,7 @@
         "clean": "rm -rf ./lib && rm -rf ./public && rm -rf ./coverage && rm -rf .cache",
         "copy-fonts": "mkdir -p ./public/font/ && cp ./src/font/* ./public/font/",
         "copy-images": "mkdir -p ./public/image/ && cp ./src/image/* ./public/image/",
-        "jest": "jest ./test/*.test.js --coverage",
+        "jest": "jest ./test/*.spec.js --coverage",
         "lint": "eslint --ext .js --ext .jsx ./src test",
         "pack": "webpack --mode development --entry ./src/index.jsx --output ./public/bundle.js",
         "prettier": "prettier --write {./src/**/*,./test/**/*,*}.{js,jsx,json}",
