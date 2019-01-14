@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import reduce from "../src/reducer";
-import { createGame } from "../src/command";
+import reduce from "../src/admin/reducer";
+import { createGame } from "../src/admin/command";
 
 describe("Create game", () => {
     test("Creates an empty player list", () => {

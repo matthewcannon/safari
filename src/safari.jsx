@@ -1,13 +1,11 @@
 import React from "react";
 import Admin from "./admin";
-import Players from "./players";
-import Debugger from "./debugger";
+import Game from "./game";
 
 const Safari = () => (
     <div>
         <Admin />
-        <Players />
-        <Debugger />
+        <Game />
     </div>
 );
 

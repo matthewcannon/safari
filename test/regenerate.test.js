@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import reduce from "../src/reducer";
-import { regenerate } from "../src/action";
+import reduce from "../src/game/reducer";
+import { regenerate } from "../src/game/action";
 
 describe("Regenerate", () => {
     test("Adds 1 to the generation", () => {
