@@ -15,7 +15,6 @@ export default function reduce(state = initialState, action) {
 
         default:
             nextState = { ...state };
-
             break;
     }
 
