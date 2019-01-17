@@ -74,7 +74,7 @@
         "pack": "webpack --mode development --entry ./src/index.jsx --output ./public/bundle.js",
         "prettier": "prettier --write {./src/**/*,./test/**/*,*}.{js,jsx,json}",
         "rebuild": "npm run clean && npm run build",
-        "sass": "node-sass ./src/style/ --output-style compressed --output ./public/style/",
+        "sass": "node-sass ./style/ --output-style compressed --output ./public/style/",
         "serve": "live-server ./public",
         "start": "npm run rebuild && npm run serve",
         "test": "npm run lint && npm run jest",
