@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-const Game = ({ generation }) => (
+const Race = ({ generation }) => (
     <div>
         <span id="generation">{generation}</span>
     </div>
 );
 
-Game.propTypes = {
+Race.propTypes = {
     generation: PropTypes.number.isRequired,
 };
 
-export default connect(({ game }) => ({ generation: game.generation }))(Game);
+export default connect(({ race }) => ({ generation: race.generation }))(Race);

@@ -1,15 +1,15 @@
 import { createStore } from "redux";
 import reduce from "../src/reducer";
-import { regenerate } from "../src/game/action";
+import { regenerate } from "../src/race/action";
 
-describe("Regenerate", () => {
-    test("Adds 1 to the game generation", () => {
+describe("regenerate", () => {
+    test("adds 1 to the race generation", () => {
         const store = createStore(reduce);
 
-        const { generation } = store.getState().game;
+        const { generation } = store.getState().race;
 
         store.dispatch(regenerate());
 
-        expect(store.getState().game.generation).toEqual(generation + 1);
+        expect(store.getState().race.generation).toEqual(generation + 1);
     });
 });

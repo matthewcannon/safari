@@ -1,16 +1,16 @@
 import deepFreeze from "deep-freeze";
-import { CREATE_GAME } from "./action";
+import { PREPARE_RACE } from "./action";
 
 const initialState = {
-    players: [{ name: "Super Camel" }, { name: "Turbo Alpaca" }, { name: "Awesome Ibex" }],
+    candidates: [{ name: "Super Camel" }, { name: "Turbo Alpaca" }, { name: "Awesome Ibex" }],
 };
 
 export default function reduce(state = initialState, action) {
     let nextState;
 
     switch (action.type) {
-        case CREATE_GAME:
-            nextState = { ...state, players: [] };
+        case PREPARE_RACE:
+            nextState = { ...state, candidates: [] };
             break;
 
         default:

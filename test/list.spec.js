@@ -1,11 +1,11 @@
 import List from "../src/list";
 
-describe("List", () => {
-    test("Calls the iteratee for each item", () => {
-        const fake = jest.fn();
+describe("list", () => {
+    test("calls the iteratee for each item", () => {
+        const fakeIteratee = jest.fn();
 
-        render(List({ iteratee: fake, items: [{}, {}] }));
+        render(List({ iteratee: fakeIteratee, items: [{}, {}] }));
 
-        expect(fake.mock.calls.length).toBe(2);
+        expect(fakeIteratee.mock.calls.length).toBe(2);
     });
 });

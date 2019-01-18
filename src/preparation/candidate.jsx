@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Player = ({ name }) => (
+const Candidate = ({ name }) => (
     <div key={name}>
         <span>{name}</span>
     </div>
 );
 
-Player.propTypes = {
+Candidate.propTypes = {
     name: PropTypes.string.isRequired,
 };
 
-export default Player;
+export default Candidate;

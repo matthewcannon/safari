@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import admin from "./admin/reducer";
-import game from "./game/reducer";
+import preparation from "./preparation/reducer";
+import race from "./race/reducer";
 
-export default combineReducers({ admin, game });
+export default combineReducers({ preparation, race });

@@ -1,11 +1,11 @@
 import React from "react";
-import Admin from "./admin";
-import Game from "./game";
+import Preparation from "./preparation";
+import Race from "./race";
 
 const Safari = () => (
     <div>
-        <Admin />
-        <Game />
+        <Preparation />
+        <Race />
     </div>
 );
 
