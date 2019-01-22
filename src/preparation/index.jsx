@@ -17,7 +17,7 @@ Preparation.propTypes = {
     prepareRace: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({ prepareRace: () => prepareRace(dispatch) });
+const mapDispatchToProps = dispatch => ({ prepareRace: prepareRace(dispatch) });
 
 export default connect(
     null,
