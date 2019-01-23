@@ -78,6 +78,6 @@
         "serve": "live-server ./public",
         "start": "npm run rebuild && npm run serve",
         "test": "npm run lint && npm run jest",
-        "tdd": "onchange -i './test/**/*.js' './src/**/*.js' './src/**/*.jsx' -- npm run build"
+        "tdd": "onchange -i './test/**/*.js' './src/**/*.js' './src/**/*.jsx' -- npm run build --silent"
     }
 }

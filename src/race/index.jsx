@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const Race = ({ generation }) => (
     <div>
-        <span id="generation">{generation}</span>
+        <span>generation:{generation}</span>
     </div>
 );
 
