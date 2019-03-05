@@ -1,10 +1,10 @@
 import React from "react";
-import Preparation from "./preparation";
+import Prepare from "./prepare";
 import Race from "./race";
 
 const Safari = () => (
     <div>
-        <Preparation />
+        <Prepare />
         <Race />
     </div>
 );

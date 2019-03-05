@@ -3,7 +3,7 @@ import reduce from "../src/reducer";
 import { regenerate } from "../src/race/action";
 
 describe("regenerate", () => {
-    test("adds 1 to the race generation", () => {
+    it("adds 1 to the race generation", () => {
         const store = createStore(reduce);
 
         const { generation } = store.getState().race;

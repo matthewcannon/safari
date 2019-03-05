@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Candidate = ({ name, abilities }) => (
-    <div key={name}>
+    <div key={`candidate-${name}`}>
         <span>Name:</span>
         <span>{name}</span>
         <span>Abilities:</span>

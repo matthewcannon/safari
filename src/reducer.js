@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import preparation from "./preparation/reducer";
+import prepare from "./prepare/reducer";
 import race from "./race/reducer";
 
-export default combineReducers({ preparation, race });
+export default combineReducers({ prepare, race });

@@ -8,4 +8,4 @@ Candidates.propTypes = {
     candidates: PropTypes.array.isRequired,
 };
 
-export default connect(({ preparation }) => ({ candidates: preparation.candidates }))(Candidates);
+export default connect(({ prepare }) => ({ candidates: prepare.candidates }))(Candidates);
