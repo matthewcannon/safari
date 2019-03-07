@@ -1,10 +1,9 @@
-import { createStore } from "redux";
-import reduce from "../src/reducer";
+import configureStore from "../src/store";
 import { regenerate } from "../src/race/action";
 
-describe("regenerate", () => {
+describe("regenerate race", () => {
     it("adds 1 to the race generation", () => {
-        const store = createStore(reduce);
+        const store = configureStore();
 
         const { generation } = store.getState().race;
 

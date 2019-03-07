@@ -1,10 +1,9 @@
-import { createStore } from "redux";
-import reduce from "../src/reducer";
+import configureStore from "../src/store";
 import { scheduleRace } from "../src/prepare/command";
 
 describe("schedule race", () => {
     xit("enrols each candidate as a runner", () => {
-        const store = createStore(reduce);
+        const store = configureStore();
 
         scheduleRace(store.dispatch);
 
